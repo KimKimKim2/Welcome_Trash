@@ -24,22 +24,23 @@
 	<title>Welcome Trash</title>
 </head>
 <body>
-	<div><a href="https://naver.com"><button type="button" id="btn1">Blog</button></a></div>
+	<div><a href="https://naver.com"><button type="button" id="btn1">Home</button></a></div>
 	<div style="float:left;width:90%;height:2.5vh;margin-bottom:4vh;font-size:3.9vh;font-weight: 900; text-align: center;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Welcome Trash</div>
 	<p><div id="map" style="width:100%;height: 92vh;"></div></p>
-
+	<form action="https://dapi.kakao.com/v2/maps/sdk.js?appkey=b25b6bf707323598a9a5169ae5a20c55=services">
 	<div id="menu_wrap" class="bg_white">
         <div class="option">
             <div>
                 <form onsubmit="searchPlaces(); return false;">
                     키워드 : <input type="text" value="" id="keyword" size="15"> 
-					<button type="submit">검색하기</button>
+                    <button type="submit">검색하기</button> 
                 </form>
             </div>
     </div>
+	</form>
 </div>
 	
-	<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=0107c29b3714d2d2ae5ee805b30d092c&libraries=clusterer" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=0107c29b3714d2d2ae5ee805b30d092c&libraries=services"></script>
+	<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=0107c29b3714d2d2ae5ee805b30d092c&libraries=clusterer"></script>
 	<script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		    mapOption = {
@@ -61,8 +62,26 @@
             [36.948976, 126.426213, '<div style="margin:2px;margin-left:4px;"> 대원그린빌아파트 </div>'],
             [37.001608, 126.412389, '<div style="margin:2px;margin-left:4px;"> 대산KCC사원아파트 </div>'],
             [36.942898, 126.423987, '<div style="margin:2px;margin-left:4px;"> 대산 휴먼시아 </div>'],
-            [36.942898, 126.423987, '<div style="margin:2px;margin-left:4px;"> 한미아파트 </div>'],
+            [36.93999395, 126.4286928, '<div style="margin:2px;margin-left:4px;"> 서산대산지구 한성필하우스 </div>'],
 			
+            [36.751096, 126.424664, '<div style="margin:2px;margin-left:4px;"> 송림아파트 </div>'], //서산시 인지면
+            [36.756532, 126.42156, '<div style="margin:2px;margin-left:4px;"> 서산청구제네스 </div>'], 
+            [36.757783, 126.428763, '<div style="margin:2px;margin-left:4px;"> 아진아파트 </div>'], 
+            [36.755578, 126.420834, '<div style="margin:2px;margin-left:4px;"> 산호옥마을아파트 </div>'], 
+            
+			[36.84281, 126.446709, '<div style="margin:2px;margin-left:4px;"> 늘푸른오스카빌 </div>'], //서산시 지곡면
+			[36.873773, 126.43838, '<div style="margin:2px;margin-left:4px;"> 미래아파트 </div>'], 
+            
+			[36.819198, 126.45181, '<div style="margin:2px;margin-left:4px;"> 고운하이츠아파트 </div>'], //서산시 성연면
+			[36.823665, 126.451911, '<div style="margin:2px;margin-left:4px;"> 이안아파트 </div>'], 
+			[36.823016, 126.453689, '<div style="margin:2px;margin-left:4px;"> e편한세상 서산테크노밸리 </div>'], 
+			[36.787613, 126.444771, '<div style="margin:2px;margin-left:4px;"> 서산테크노밸리고운라피네아파트 </div>'], 
+			[36.820967, 126.451703, '<div style="margin:2px;margin-left:4px;"> 이안 더 서산아파트 </div>'], 
+
+			[36.823016, 126.453689, '<div style="margin:2px;margin-left:4px;"> e편한세상 서산테크노밸리 </div>'], //서산시 음암면
+			[36.823016, 126.453689, '<div style="margin:2px;margin-left:4px;"> e편한세상 서산테크노밸리 </div>'], 
+			[36.823016, 126.453689, '<div style="margin:2px;margin-left:4px;"> e편한세상 서산테크노밸리 </div>'], 
+			[36.823016, 126.453689, '<div style="margin:2px;margin-left:4px;"> e편한세상 서산테크노밸리 </div>'], 
 
 			[35.873859, 128.602228, '<div style="margin:2px;margin-left:4px;">  78태평아파트상가내 </div>'], // 대구광역시 중구
 			[35.872143, 128.604784, '<div style="margin:2px;margin-left:4px;">  동인네거리 시청별관옆 </div>'],
