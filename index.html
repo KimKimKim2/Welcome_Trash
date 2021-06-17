@@ -27,21 +27,19 @@
 	<div><a href="https://naver.com"><button type="button" id="btn1">Home</button></a></div>
 	<div style="float:left;width:90%;height:2.5vh;margin-bottom:4vh;font-size:3.9vh;font-weight: 900; text-align: center;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Welcome Trash</div>
 	<p><div id="map" style="width:100%;height: 92vh;"></div></p>
-	
 	<div id="menu_wrap" class="bg_white">
         <div class="option">
             <div>
                 <form onsubmit="searchPlaces(); return false;">
                     키워드 : <input type="text" value="" id="keyword" size="15"> 
-                    <form action="https://dapi.kakao.com/v2/maps/sdk.js?appkey=b25b6bf707323598a9a5169ae5a20c55&libraries=services">
-						<button type="submit">검색하기</button></form> 
+						<form action="https://kimkimkim2.github.io"><button type="submit">검색하기</button></form>
                 </form>
             </div>
     </div>
 </div>
 	
-	<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=0107c29b3714d2d2ae5ee805b30d092c&libraries=clusterer"></script>
-	<script>
+<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=0107c29b3714d2d2ae5ee805b30d092c&libraries=clusterer"></script>
+<script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		    mapOption = {
 		        center: new kakao.maps.LatLng(36.770256, 126.446376), // 지도의 중심좌표
@@ -330,50 +328,7 @@
         infowindow.close();
     	};
 		}
-
-        
-        
-	// 장소 검색 객체를 생성합니다
-	var ps = new kakao.maps.services.Places();  
-
-	// 키워드로 장소를 검색합니다
-	searchPlaces();
-
-	// 키워드 검색을 요청하는 함수입니다
-	function searchPlaces() {
-
-    	var keyword = document.getElementById('keyword').value;
-
-    	if (!keyword.replace(/^\s+|\s+$/g, '')) {
-        alert('키워드를 입력해주세요!');
-        return false;
-    	}
-
-    	// 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-    	ps.keywordSearch( keyword, placesSearchCB); 
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
+            
         // 지도에 확대 축소 컨트롤을 생성한다
 		var zoomControl = new kakao.maps.ZoomControl();
 
@@ -385,6 +340,54 @@
 		console.log('지도의 현재 확대레벨은 ' + map.getLevel() +'레벨 입니다.');
 		});
 
+			// 장소 검색 객체를 생성합니다
+	var ps = new kakao.maps.services.Places();  
+
+	// 키워드로 장소를 검색합니다
+searchPlaces();
+
+// 키워드 검색을 요청하는 함수입니다
+function searchPlaces() {
+
+	var keyword = document.getElementById('keyword').value;
+
+	if (!keyword.replace(/^\s+|\s+$/g, '')) {
+	alert('키워드를 입력해주세요!');
+	return false;
+	}
+
+	// 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+	ps.keywordSearch( keyword, placesSearchCB); 
+}
+
+// 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
+function placesSearchCB(data, status, pagination) {
+if (status === kakao.maps.services.Status.OK) {
+
+
+} else if (status === kakao.maps.services.Status.ZERO_RESULT) {
+
+alert('검색 결과가 존재하지 않습니다.');
+return;
+
+} else if (status === kakao.maps.services.Status.ERROR) {
+
+alert('검색 결과 중 오류가 발생했습니다.');
+return;
+
+}
+}
+
+for ( var i=0; i<places.length; i++ ) {
+
+// 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+	// LatLngBounds 객체에 좌표를 추가합니다
+	bounds.extend(placePosition);
+
+
+// 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+map.setBounds(bounds);
+}
 	</script>
 </body>
 </html>
