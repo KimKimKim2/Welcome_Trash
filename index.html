@@ -342,12 +342,14 @@
 
 			// 장소 검색 객체를 생성합니다
 	var ps = new kakao.maps.services.Places();  
+	
+	Places.setMap(map);
 
 	// 키워드로 장소를 검색합니다
-searchPlaces();
+	searchPlaces();
 
-// 키워드 검색을 요청하는 함수입니다
-function searchPlaces() {
+	// 키워드 검색을 요청하는 함수입니다
+	function searchPlaces() {
 
 	var keyword = document.getElementById('keyword').value;
 
@@ -360,7 +362,7 @@ function searchPlaces() {
 	ps.keywordSearch( keyword, placesSearchCB); 
 }
 
-// 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
+	// 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
 function placesSearchCB(data, status, pagination) {
 if (status === kakao.maps.services.Status.OK) {
 
@@ -378,7 +380,7 @@ return;
 }
 }
 
-for ( var i=0; i<places.length; i++ ) {
+for ( var k=0; k<places.length; k++ ) {
 
 // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
 	// LatLngBounds 객체에 좌표를 추가합니다
