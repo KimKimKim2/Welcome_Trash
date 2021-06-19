@@ -31,7 +31,7 @@
         <div class="option">
             <div>
                 <form onsubmit="searchPlaces(); return false;">
-                    키워드 : <input type="text" value="서울특별시" id="keyword" size="15"> 
+                    키워드 : <input type="text" id="keyword" size="15"> 
 						<button type="submit">검색하기</button>
                 </form>
             </div>
@@ -343,9 +343,6 @@
 		// 주소-좌표 변환 객체를 생성합니다
 		var Ps = new kakao.maps.services.Places();
 
-		// 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
-		var infowindow = new kakao.maps.InfoWindow({zIndex:1});
-
 		// 키워드로 장소를 검색합니다
 		searchPlaces();
 
@@ -372,9 +369,10 @@
 			var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
         // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-        map.setCenter(coords);
-
 		bounds.extend(coords);
+		map.setCenter(coords);
+
+	
 
 		} else if (status === kakao.maps.services.Status.ZERO_RESULT) {
 
