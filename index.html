@@ -371,6 +371,9 @@
         // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
         map.setCenter(coords);
 
+		// 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+		map.setBounds(coords);
+
 		} else if (status === kakao.maps.services.Status.ZERO_RESULT) {
 
 		alert('검색 결과가 존재하지 않습니다.');
