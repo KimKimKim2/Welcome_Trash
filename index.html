@@ -31,7 +31,7 @@
         <div class="option">
             <div>
                 <form onsubmit="searchPlaces(); return false;">
-                    키워드 : <input type="text" value="" id="keyword" size="15"> 
+                    키워드 : <input type="text" value="서울특별시" id="keyword" size="15"> 
 						<button type="submit">검색하기</button>
                 </form>
             </div>
@@ -371,8 +371,7 @@
         // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
         map.setCenter(coords);
 
-		// 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
-		map.setBounds(coords);
+		bounds.extend(coords);
 
 		} else if (status === kakao.maps.services.Status.ZERO_RESULT) {
 
