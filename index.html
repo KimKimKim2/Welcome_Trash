@@ -42,8 +42,8 @@
 <script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		    mapOption = {
-		        center: new kakao.maps.LatLng(36.770256, 126.446376), // 지도의 중심좌표
-		        level: 5, // 지도의 확대 레벨
+		        center: new kakao.maps.LatLng(36.494278, 127.990430), // 지도의 중심좌표
+		        level: 10, // 지도의 확대 레벨
 		        mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
 		    }; 
 
@@ -76,10 +76,44 @@
 			[36.787613, 126.444771, '<div style="margin:2px;margin-left:4px;"> 서산테크노밸리고운라피네아파트 </div>'], 
 			[36.820967, 126.451703, '<div style="margin:2px;margin-left:4px;"> 이안 더 서산아파트 </div>'], 
 
-			[36.823016, 126.453689, '<div style="margin:2px;margin-left:4px;"> e편한세상 서산테크노밸리 </div>'], //서산시 음암면
-			[36.823016, 126.453689, '<div style="margin:2px;margin-left:4px;"> e편한세상 서산테크노밸리 </div>'], 
-			[36.823016, 126.453689, '<div style="margin:2px;margin-left:4px;"> e편한세상 서산테크노밸리 </div>'], 
-			[36.823016, 126.453689, '<div style="margin:2px;margin-left:4px;"> e편한세상 서산테크노밸리 </div>'], 
+			[36.801458, 126.515025, '<div style="margin:2px;margin-left:4px;"> 개나리아파트 </div>'], //서산시 음암면
+			[36.78965, 126.507387, '<div style="margin:2px;margin-left:4px;"> 한아름아파트 </div>'], 
+			[36.804243, 126.477966, '<div style="margin:2px;margin-left:4px;"> 음암마을아파트 </div>'], 
+			[36.792825, 126.505925, '<div style="margin:2px;margin-left:4px;"> 우리마을아파트 </div>'], 
+
+			[36.710402, 126.550076, '<div style="margin:2px;margin-left:4px;"> 가야아파트 </div>'], //서산시 해미면
+			[36.710781, 126.550756, '<div style="margin:2px;margin-left:4px;"> 아담아파트 </div>'], 
+			[36.711235, 126.538875, '<div style="margin:2px;margin-left:4px;"> 파컴하이빌 </div>'], 
+			
+			[36.785033, 126.44175, '<div style="margin:2px;margin-left:4px;"> 동신아파트 </div>'], //서산시 부춘동
+			[36.785383, 126.442925, '<div style="margin:2px;margin-left:4px;"> 대림-동신아파트 </div>'], 
+			[36.775835, 126.445871, '<div style="margin:2px;margin-left:4px;"> 서산읍내현대아파트 </div>'], 
+			[36.78015, 126.444113, '<div style="margin:2px;margin-left:4px;"> 동일아파트 </div>'], 
+			[36.783958, 126.444587, '<div style="margin:2px;margin-left:4px;"> 부춘아파트 </div>'], 
+
+			[36.789789, 126.456679, '<div style="margin:2px;margin-left:4px;"> 대림아파트 </div>'], //서산시 동문1동
+			[36.787411, 126.457484, '<div style="margin:2px;margin-left:4px;"> 평화아파트 </div>'], 
+			[36.794457, 126.460789, '<div style="margin:2px;margin-left:4px;"> 삼성아파트 </div>'], 
+			[36.790967, 126.459113, '<div style="margin:2px;margin-left:4px;"> 영진훼미리 </div>'], 
+			[36.784633, 126.461163, '<div style="margin:2px;margin-left:4px;"> 극동맨션 </div>'], 
+
+			[36.778083, 126.464412, '<div style="margin:2px;margin-left:4px;"> 동문주공아파트 </div>'], //서산시 동문2동
+			[36.780025, 126.463038, '<div style="margin:2px;margin-left:4px;"> 동문동현대아파트 </div>'], 
+			[36.781203, 126.463166, '<div style="margin:2px;margin-left:4px;"> 극동한신아파트 </div>'], 
+			[36.783158, 126.466075, '<div style="margin:2px;margin-left:4px;"> 한라비발디아파트 </div>'], 
+			[36.786018, 126.454596, '<div style="margin:2px;margin-left:4px;"> 동문동 한성필하우스 </div>'], 
+
+			[36.77579, 126.461051, '<div style="margin:2px;margin-left:4px;"> 영진로얄아파트 </div>'], //서산시 수석동
+			[36.759388, 126.48376, '<div style="margin:2px;margin-left:4px;"> 매화아파트 </div>'], 
+			[36.759783, 126.484725, '<div style="margin:2px;margin-left:4px;"> 동남아파트(1차) </div>'], 
+			[36.772363, 126.463783, '<div style="margin:2px;margin-left:4px;"> 주공아파트(3단지) </div>'], 
+			[36.767317, 126.467738, '<div style="margin:2px;margin-left:4px;"> 중앙하이츠빌 </div>'], 
+
+			[36.768852, 126.445808, '<div style="margin:2px;margin-left:4px;"> e편한세산 서산예천 </div>'], //서산시 석남동
+			[36.738972, 126.489001, '<div style="margin:2px;margin-left:4px;"> 푸른솔아파트</div>'], 
+			[36.755117, 126.47165, '<div style="margin:2px;margin-left:4px;"> 무림아파트 </div>'], 
+			[36.769933, 126.455238, '<div style="margin:2px;margin-left:4px;"> 영진크로바아파트 </div>'], 
+			[36.77003891, 126.4619282, '<div style="margin:2px;margin-left:4px;"> 서산석림 라온프라이빗아파트 </div>'], 
 
 			[35.873859, 128.602228, '<div style="margin:2px;margin-left:4px;">  78태평아파트상가내 </div>'], // 대구광역시 중구
 			[35.872143, 128.604784, '<div style="margin:2px;margin-left:4px;">  동인네거리 시청별관옆 </div>'],
@@ -371,7 +405,7 @@
         // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
 		map.setCenter(coords);
 
-		map.setBounds(coords);
+		mapOption = {level: 5};
 
 
 		} else if (status === kakao.maps.services.Status.ZERO_RESULT) {
