@@ -43,7 +43,7 @@
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		    mapOption = {
 		        center: new kakao.maps.LatLng(36.494278, 127.990430), // 지도의 중심좌표
-		        level: 10, // 지도의 확대 레벨
+		        level: 12, // 지도의 확대 레벨
 		        mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
 		    }; 
 
@@ -114,6 +114,32 @@
 			[36.755117, 126.47165, '<div style="margin:2px;margin-left:4px;"> 무림아파트 </div>'], 
 			[36.769933, 126.455238, '<div style="margin:2px;margin-left:4px;"> 영진크로바아파트 </div>'], 
 			[36.77003891, 126.4619282, '<div style="margin:2px;margin-left:4px;"> 서산석림 라온프라이빗아파트 </div>'], 
+
+			[36.17703870208893, 127.78005166906306, '<div style="margin:2px;margin-left:4px;"> 대성아파트 </div>'], //영동군 영온읍
+			[36.17382540247403, 127.7849984344686, '<div style="margin:2px;margin-left:4px;"> 렉시움 </div>'], 
+			[36.22872649834469, 127.91080322673766, '<div style="margin:2px;margin-left:4px;"> 양지연립 </div>'], 
+			[36.18816515253697, 127.78084402488035, '<div style="margin:2px;margin-left:4px;"> 훼미리타운 </div>'], 
+			[36.17405256192682, 127.77396979789945, '<div style="margin:2px;margin-left:4px;"> 유천연립 </div>'], 
+
+			[35.733384, 127.579166, '<div style="margin:2px;margin-left:4px;"> 도원 파크뷰 아파트 </div>'], //전라남도 장수군
+
+			[37.779276579758736, 126.84755928259926, '<div style="margin:2px;margin-left:4px;"> 광탄연립 </div>'], //경기도 파주시
+			[37.715415838389156, 126.68999068259743, '<div style="margin:2px;margin-left:4px;"> 헤르만하우스 </div>'], 
+			[37.72399628290443, 126.70900222492439, '<div style="margin:2px;margin-left:4px;"> 숲속길마을동문굿모닝힐 </div>'], 
+			[37.75688182693607, 126.77508039794512, '<div style="margin:2px;margin-left:4px;"> 장안하나 </div>'], 
+			[36.99811855448129, 127.91643311326952, '<div style="margin:2px;margin-left:4px;"> 동양부로미 </div>'], 
+			[37.754576679763105, 126.77160129794504, '<div style="margin:2px;margin-left:4px;"> 대영장미 </div>'], 
+			[37.7530081454328, 126.77549441143502, '<div style="margin:2px;margin-left:4px;"> 쇠재마을뜨란채 </div>'], 
+			[37.750782779763924, 126.77464719794499, '<div style="margin:2px;margin-left:4px;"> 금촌풍림아이원 </div>'], 
+			[37.7684550986985, 126.77029166910866, '<div style="margin:2px;margin-left:4px;"> 삼산 </div>'], 
+			[37.77472308148962, 126.74501796910897, '<div style="margin:2px;margin-left:4px;"> 유승 </div>'], 
+			[37.7703663456873, 126.77078524212867, '<div style="margin:2px;margin-left:4px;"> 대방노블랜드 </div>'], 
+			[37.71275305466637, 126.73459182678037, '<div style="margin:2px;margin-left:4px;"> 운정신도시 IPARK </div>'], 
+			[37.85926827974413, 126.79211208260165, '<div style="margin:2px;margin-left:4px;"> 문산두산위브 </div>'], 
+			[37.86455180971426, 126.80065076911164, '<div style="margin:2px;margin-left:4px;"> 문산선유2단지 휴먼시아 </div>'], 
+			[37.95564477972703, 126.91489302678765, '<div style="margin:2px;margin-left:4px;"> 청학연립 </div>'], 
+			[37.74685714810699, 126.81058809794473, '<div style="margin:2px;margin-left:4px;"> 태형미림 </div>'], 
+			[37.831331101292584, 126.84977309794718, '<div style="margin:2px;margin-left:4px;"> 두양엘린빌 </div>'], 
 
 			[35.873859, 128.602228, '<div style="margin:2px;margin-left:4px;">  78태평아파트상가내 </div>'], // 대구광역시 중구
 			[35.872143, 128.604784, '<div style="margin:2px;margin-left:4px;">  동인네거리 시청별관옆 </div>'],
@@ -405,7 +431,7 @@
         // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
 		map.setCenter(coords);
 
-		mapOption = {level: 5};
+		map.setBounds(coords);
 
 
 		} else if (status === kakao.maps.services.Status.ZERO_RESULT) {
